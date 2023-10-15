@@ -41,6 +41,7 @@ def download(request):
         with open(file_path, 'rb') as fh:
             response = HttpResponse(fh.read(), content_type="application/vnd.ms-word")
             response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
+        os.remove(file_path)
         return response
     
     raise "Http404"

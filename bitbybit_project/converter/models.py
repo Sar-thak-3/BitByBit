@@ -1,7 +1,8 @@
 from django.db import models
 import os
 from django.conf import settings
-
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 def content_file_name(instance, filename):
     filename = "input.html"
