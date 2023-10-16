@@ -49,4 +49,38 @@ efficiently without compromising on accuracy or speed.
 We have created a user-friendly form using HTML, CSS, Bootstrap, and JavaScript. The form allows users to upload a file, which is then processed. Once the processing is complete, a downloadable DOCX file is generated. The combination of these technologies ensures a seamless and responsive user experience.
 
 ### Backend: 
+In the backend of this project, we have implemented a robust system to handle file uploads and processing. Upon receiving a file from the user, it is stored in a designated model. Subsequently, the file undergoes processing and is converted into a DOCX format. Finally, the processed document is promptly sent back to the user via an HTTP response. This backend workflow ensures efficient handling and delivery of processed files, enhancing the overall user experience.
 
+### Background Process
+Used various python libraries to comprehensively achieve the best results in the conversion of HTML to Docx. 
+
+---
+## Setup 
+The first thing to do is to clone the repository:
+
+```sh
+$ git clone https://github.com/Sar-thak-3/BitByBit.git
+$ cd bitbybit_project
+```
+
+Create a virtual environment to install dependencies in and activate it:
+
+```sh
+$ virtualenv env
+$ env/scripts/activate
+```
+
+Then install the dependencies:
+
+```sh
+(env)$ pip install -r requirements.txt
+```
+Note the `(env)` in front of the prompt. This indicates that this terminal
+session operates in a virtual environment set up by `virtualenv`.
+
+Once `pip` has finished downloading the dependencies:
+```sh
+(env)$ cd project
+(env)$ python manage.py runserver
+```
+And navigate to `http://127.0.0.1:8000/`.
