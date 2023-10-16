@@ -4,11 +4,8 @@ import os
 from django.shortcuts import render, redirect
 from .models import UploadFile
 from .forms import UploadFileForm
-# from .handlefiles import handle_uploaded_file
 from .convert import convert_file
 
-# def home(request):
-    # return render(request, "basics/main.html")
 
 def upload(request):
 
@@ -39,9 +36,10 @@ def download(request):
 
     if os.path.exists(file_path):
         with open(file_path, 'rb') as fh:
-            response = HttpResponse(fh.read(), content_type="application/vnd.ms-word")
+            response = HttpResponse(fh.read(), content_type = "application/vnd.ms-word")
             response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
         os.remove(file_path)
+        
         return response
     
     raise "Http404"
